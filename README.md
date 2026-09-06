@@ -1,86 +1,68 @@
-OMEN / Victus Linux Keyboard Lighting Control
+# **OMEN / Victus Linux Keyboard Lighting Control**
 
-    A lightweight, persistent graphical dashboard built with Python/Tkinter to manage and customize RGB keyboard lighting on HP Victus and HP OMEN laptops running Linux.
+> A lightweight, persistent graphical dashboard built with **Python/Tkinter** to manage and customize RGB keyboard lighting on **HP Victus** and **HP OMEN** laptops running **Linux**.
 
-Quick Navigation
+---
 
-    Requirements
+### **Quick Navigation**
+* [**Requirements**](#requirements)
+* [**Features**](#features)
+* [**Installation Options**](#installation-options)
+  * [**Option 1: Debian / Ubuntu / Mint (.deb)**](#option-1-debian--ubuntu--linux-mint-deb-package--recommended)
+  * [**Option 2: Portable AppImage**](#option-2-standalone-portable-appimage)
+  * [**Option 3: Manual Source Installation**](#option-3-manual-source-installation)
+* [**Usage**](#usage)
+* [**How It Works**](#how-it-works)
+* [**Troubleshooting**](#troubleshooting)
+* [**Uninstallation**](#uninstallation)
 
-    Features
+---
 
-    Installation Options
+## **Requirements**
 
-        Option 1: Debian / Ubuntu / Mint (.deb)
+### **1. Hardware**
+* **Device:** **HP Victus** or **HP OMEN** laptop with single-zone or multi-zone RGB backlit keyboard.
+* **BIOS:** Factory **HP WMI** interface enabled (default state).
 
-        Option 2: Portable AppImage
+### **2. Operating System**
+* **OS:** **Debian**, **Linux Mint**, **Ubuntu**, **Arch Linux**, or derivative distributions.
+* **Kernel:** Version **5.15** or newer recommended.
+* **Privileges:** **Sudo access** required during initial installation for hardware node permissions.
 
-        Option 3: Manual Source Installation
+### **3. Core Software & Drivers**
+* **Driver Module:** [**omen-rgb-keyboard**](https://github.com/thesofproject/omen-rgb-keyboard) kernel module installed and active (`lsmod | grep omen`).
+* **Python Runtime:** **Python 3.8+** (`python3`).
+* **GUI Toolkit:** Python Tkinter bindings (**`python3-tk`**).
+* **System Tools:** **`coreutils`** (`tee`), **`bash`**.
 
-    Usage
+---
 
-    How It Works
+## **Features**
 
-    Troubleshooting
+* **Dedicated Power Controls:** Fast one-click **Turn ON** and **Turn OFF** buttons.
+* **Persistent GUI:** Stays open on screen; does not close unexpectedly after selecting a color.
+* **Full RGB Spectrum:** Interactive color picker wheel supporting millions of hex colors.
+* **Quick Color Presets:** Instant one-click selection for presets and primary shades.
+* **Live Brightness Slider:** Smooth brightness adjustment from **0% to 100%**.
+* **Auto-Restore on Boot:** Automatically saves preferences and restores your color when you log in.
+* **Desktop Menu Integration:** Installs a standard desktop icon and launcher entry.
 
-    Uninstallation
+---
 
-Requirements
-1. Hardware
-
-    Device: HP Victus or HP OMEN laptop with single-zone or multi-zone RGB backlit keyboard.
-
-    BIOS: Factory HP WMI interface enabled (default state).
-
-2. Operating System
-
-    OS: Debian, Linux Mint, Ubuntu, Arch Linux, or derivative distributions.
-
-    Kernel: 5.15 or newer recommended.
-
-    Privileges: Sudo access required during initial installation for hardware node permissions.
-
-3. Core Software & Drivers
-
-    Driver Module: omen-rgb-keyboard kernel module installed and active (lsmod | grep omen).
-
-    Python Runtime: Python 3.8+ (python3).
-
-    GUI Toolkit: Python Tkinter bindings (python3-tk).
-
-    System Tools: coreutils (tee), bash.
-
-Features
-
-    Dedicated Power Controls: Fast one-click Turn ON and Turn OFF buttons.
-
-    Persistent GUI: Stays open on screen; does not close unexpectedly after selecting a color.
-
-    Full RGB Spectrum: Interactive color picker wheel supporting millions of hex colors.
-
-    Quick Color Presets: Instant one-click selection for presets and primary shades.
-
-    Live Brightness Slider: Smooth brightness adjustment from 0% to 100%.
-
-    Auto-Restore on Boot: Automatically saves preferences and restores your color when you log in.
-
-    Desktop Menu Integration: Installs a standard desktop icon and launcher entry.
-
-Installation Options
+## **Installation Options**
 
 Choose the installation method that best matches your distribution and workflow:
-Option 1: Debian / Ubuntu / Linux Mint (.deb Package) — Recommended
+
+### **Option 1: Debian / Ubuntu / Linux Mint (`.deb` Package) — Recommended**
 
 Installs system-wide with application shortcuts, launcher icons, and permission configurations automatically.
 
-    Download the latest .deb package from the Releases page.
+1. Download the latest **`.deb`** package from the [**Releases**](https://github.com/hardikkansara947-cmyk/Omen-keyboard-lightning-control-app/releases/latest) page.
+2. Install the package using **`apt`**:
+   ```bash
+   sudo apt install ./omen-keyboard-lightning-control_2.0.0_all.deb
 
-    Install the package using apt:
-    Bash
-
-    sudo apt install ./omen-keyboard-lightning-control_2.0.0_all.deb
-
-    (Or double-click the downloaded .deb file in your desktop file manager).
-
+(Or double-click the downloaded .deb file in your desktop file manager).
 Option 2: Standalone Portable (.AppImage)
 
 Runs directly on any Linux distribution without system-level installation.
@@ -102,7 +84,7 @@ Option 3: Manual Source Installation
     Clone the repository:
     Bash
 
-    git clone https://github.com/hardikkansara947-cmyk/Omen-keyboard-lightning-control-app.git
+    git clone [https://github.com/hardikkansara947-cmyk/Omen-keyboard-lightning-control-app.git](https://github.com/hardikkansara947-cmyk/Omen-keyboard-lightning-control-app.git)
     cd Omen-keyboard-lightning-control-app
 
     Make the installer executable and run it:
