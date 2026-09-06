@@ -1,6 +1,29 @@
 OMEN / Victus Linux Keyboard Lighting Control
 
-A lightweight, persistent graphical dashboard built with Python/Tkinter to manage and customize RGB keyboard lighting on HP Victus and HP OMEN laptops running Linux.
+    A lightweight, persistent graphical dashboard built with Python/Tkinter to manage and customize RGB keyboard lighting on HP Victus and HP OMEN laptops running Linux.
+
+Quick Navigation
+
+    Requirements
+
+    Features
+
+    Installation Options
+
+        Option 1: Debian / Ubuntu / Mint (.deb)
+
+        Option 2: Portable AppImage
+
+        Option 3: Manual Source Installation
+
+    Usage
+
+    How It Works
+
+    Troubleshooting
+
+    Uninstallation
+
 Requirements
 1. Hardware
 
@@ -38,11 +61,11 @@ Features
 
     Live Brightness Slider: Smooth brightness adjustment from 0% to 100%.
 
-    Auto-Restore on Boot: Automatically saves your preferences and restores your color when you log in.
+    Auto-Restore on Boot: Automatically saves preferences and restores your color when you log in.
 
     Desktop Menu Integration: Installs a standard desktop icon and launcher entry.
 
-Installation
+Installation Options
 
 Choose the installation method that best matches your distribution and workflow:
 Option 1: Debian / Ubuntu / Linux Mint (.deb Package) — Recommended
@@ -89,21 +112,20 @@ Option 3: Manual Source Installation
     ./install.sh
 
 Usage
-Launch from Application Menu
 
-Open your desktop application launcher, search for OMEN Lighting Control, and launch the app.
-Launch from Terminal
-Bash
+    Launch from Application Menu: Open your desktop application launcher, search for OMEN Lighting Control, and click the launcher icon.
 
-omen-controller
+    Launch from Terminal:
+    Bash
 
-(If installed manually via script, use ~/.local/bin/omen-controller)
-Restore Profile on Login (Headless)
+    omen-controller
 
-To apply your saved color and brightness profile in the background without launching the GUI:
-Bash
+    (If installed manually via script, use ~/.local/bin/omen-controller)
 
-omen-controller --restore
+    Restore Profile on Login (Headless):
+    Bash
+
+    omen-controller --restore
 
 How It Works
 
@@ -138,24 +160,24 @@ echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/tee /sys/devices/platform/omen-rgb-keyb
 sudo chmod 0440 /etc/sudoers.d/omen-rgb
 
 Uninstallation
-If installed via .deb package:
-Bash
 
-sudo apt remove omen-keyboard-lightning-control
+    If installed via .deb package:
+    Bash
 
-If installed via install.sh:
-Bash
+    sudo apt remove omen-keyboard-lightning-control
 
-rm -f ~/.local/bin/omen-controller
-rm -f ~/.local/share/applications/omen-lighting.desktop
-rm -f ~/.config/autostart/omen-lighting-autostart.desktop
-rm -rf ~/.config/omen-rgb
-sudo rm -f /etc/sudoers.d/omen-rgb
-update-desktop-database ~/.local/share/applications 2>/dev/null || true
+    If installed via install.sh:
+    Bash
 
-If using AppImage:
+    rm -f ~/.local/bin/omen-controller
+    rm -f ~/.local/share/applications/omen-lighting.desktop
+    rm -f ~/.config/autostart/omen-lighting-autostart.desktop
+    rm -rf ~/.config/omen-rgb
+    sudo rm -f /etc/sudoers.d/omen-rgb
+    update-desktop-database ~/.local/share/applications 2>/dev/null || true
 
-Simply delete the .AppImage file and optional config directory:
-Bash
+    If using AppImage:
+    Delete the .AppImage file and clear the local settings folder:
+    Bash
 
-rm -rf ~/.config/omen-rgb
+    rm -rf ~/.config/omen-rgb
