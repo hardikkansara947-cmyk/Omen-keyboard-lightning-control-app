@@ -63,7 +63,8 @@ Installs system-wide with application shortcuts, launcher icons, and permission 
    sudo apt install ./omen-keyboard-lightning-control_2.0.0_all.deb
 
 (Or double-click the downloaded .deb file in your desktop file manager).
-Option 2: Standalone Portable (.AppImage)
+
+**Option 2: Standalone Portable (.AppImage)**
 
 Runs directly on any Linux distribution without system-level installation.
 
@@ -79,7 +80,7 @@ Runs directly on any Linux distribution without system-level installation.
 
     ./Omen-Lighting-Control-2.0.0-x86_64.AppImage
 
-Option 3: Manual Source Installation
+**Option 3: Manual Source Installation**
 
     Clone the repository:
     Bash
@@ -93,7 +94,7 @@ Option 3: Manual Source Installation
     chmod +x install.sh
     ./install.sh
 
-Usage
+**Usage**
 
     Launch from Application Menu: Open your desktop application launcher, search for OMEN Lighting Control, and click the launcher icon.
 
@@ -108,8 +109,8 @@ Usage
     Bash
 
     omen-controller --restore
-
-How It Works
+**
+How It Works**
 
 HP OMEN and Victus keyboards interact with the system via direct sysfs hardware attributes created by the omen-rgb-keyboard driver:
 
@@ -120,7 +121,8 @@ HP OMEN and Victus keyboards interact with the system via direct sysfs hardware 
     Color allocation: /sys/devices/platform/omen-rgb-keyboard/rgb_zones/all and /sys/devices/platform/omen-rgb-keyboard/rgb_zones/zone00
 
 The application communicates directly with these kernel sysfs nodes while bypassing root password prompts via dedicated permissions configured in /etc/sudoers.d/omen-rgb. Configuration files are saved locally to ~/.config/omen-rgb/config.json.
-Troubleshooting
+
+**Troubleshooting**
 Keyboard color does not change
 
 Verify that the kernel module is active:
@@ -132,8 +134,8 @@ Check driver messages in the kernel log:
 Bash
 
 sudo dmesg | grep -i omen
-
-Permissions error when setting color
+**
+Permissions error when setting color**
 
 Verify that passwordless access to the RGB nodes is configured:
 Bash
@@ -141,7 +143,7 @@ Bash
 echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/tee /sys/devices/platform/omen-rgb-keyboard/rgb_zones/*" | sudo tee /etc/sudoers.d/omen-rgb
 sudo chmod 0440 /etc/sudoers.d/omen-rgb
 
-Uninstallation
+**Uninstallation**
 
     If installed via .deb package:
     Bash
